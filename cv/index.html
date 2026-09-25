@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CV · Berk Durutürk</title>
+<meta name="description" content="Curriculum vitae of Berk Durutürk — Ph.D. candidate, University of Michigan SEAS; Great Lakes biogeochemistry.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Barlow:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --text: #1a1a1a;
+    --muted: #5f6368;
+    --bg: #ffffff;
+    --rule: #dcdcdc;
+    --link: #1a55b8;
+    --chip-bg: #f1f3f6;
+    --chip-on: #1a1a1a;
+    --chip-on-text: #ffffff;
+    --logo-mono-filter: none;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --text: #e8e8e8; --muted: #a0a4a8; --bg: #151618; --rule: #34363a;
+      --link: #7fb0ff; --chip-bg: #24262a; --chip-on: #e8e8e8; --chip-on-text: #151618; --logo-mono-filter: invert(1);
+    }
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0; background: var(--bg); color: var(--text);
+    font: 17px/1.6 "Barlow", "Helvetica Neue", Arial, sans-serif;
+  }
+  .wrap { max-width: 860px; margin: 0 auto; padding: 48px 20px 80px; }
+  a { color: var(--link); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  /* ---------- Header ---------- */
+  header h1, section h2 { font-family: "Montserrat", "Helvetica Neue", Arial, sans-serif; }
+  header h1 { font-size: 2.3rem; font-weight: 700; margin: 0 0 4px; letter-spacing: -0.02em; }
+  .tagline { color: var(--muted); margin: 0 0 12px; font-size: 1.05rem; }
+  .contact { display: flex; flex-wrap: wrap; gap: 6px 18px; margin: 0 0 20px; font-size: 0.97rem; }
+  .contact span.sep { color: var(--rule); }
+
+  /* ---------- View toggle ---------- */
+  .toolbar { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin-bottom: 14px; }
+  .toggle { display: inline-flex; border: 1px solid var(--rule); border-radius: 999px; padding: 3px; }
+  .toggle button, .chips button, .print-btn {
+    font: inherit; font-size: 0.9rem; cursor: pointer; border: 0; border-radius: 999px;
+    padding: 5px 14px; background: transparent; color: var(--text);
+  }
+  .toggle button[aria-pressed="true"] { background: var(--chip-on); color: var(--chip-on-text); }
+  .print-btn { border: 1px solid var(--rule); }
+  .print-btn:hover { background: var(--chip-bg); }
+
+  /* ---------- Jump nav ---------- */
+  /* ---------- Sidebar ---------- */
+  :root { --side-w: 280px; --side-bg: #0b2340; --side-text: #a9b6c6; --side-active-bg: #2c3a42; --side-dot: #f2c230; }
+  aside.sidebar {
+    position: fixed; top: 0; left: 0; bottom: 0; width: var(--side-w);
+    background: var(--side-bg); border-top: 3px solid #1c3558;
+    padding: 32px 0; overflow-y: auto; z-index: 10;
+  }
+  a.home-link {
+    display: block; padding: 0 24px 18px; margin-bottom: 8px; border-bottom: 1px solid rgba(255,255,255,0.08);
+    color: #fff; font: 600 0.95rem/1.2 "Montserrat", Arial, sans-serif; letter-spacing: 0.02em; text-decoration: none;
+  }
+  a.home-link:hover { color: var(--side-dot); }
+  nav.jump { display: flex; flex-direction: column; }
+  nav.jump a {
+    display: flex; align-items: center; gap: 22px; padding: 17px 24px;
+    color: var(--side-text); font-weight: 600; font-size: 1.12rem; text-decoration: none;
+    transition: background .15s, color .15s;
+  }
+  nav.jump a::before {
+    content: ""; width: 7px; height: 7px; border-radius: 50%; flex: none;
+    background: #6f7f92; transition: background .15s;
+  }
+  nav.jump a:hover { color: #fff; background: rgba(255,255,255,0.05); }
+  nav.jump a.active { color: #fff; background: var(--side-active-bg); }
+  nav.jump a.active::before { background: var(--side-dot); }
+  body { padding-left: var(--side-w); }
+  header { margin-bottom: 8px; }
+
+  @media (max-width: 900px) {
+    body { padding-left: 0; }
+    aside.sidebar { position: sticky; top: 0; bottom: auto; width: auto; padding: 0; overflow-x: auto; }
+    nav.jump { flex-direction: row; white-space: nowrap; }
+    aside.sidebar { display: flex; align-items: center; }
+    a.home-link { padding: 12px 16px; margin: 0; border: 0; border-right: 1px solid rgba(255,255,255,0.12); white-space: nowrap; flex: none; }
+    nav.jump a { padding: 12px 16px; gap: 10px; font-size: 0.95rem; }
+  }
+
+  /* School logos (Education) */
+  .with-logo { display: flex; align-items: flex-start; gap: 12px; }
+  .school-logo, .logo-fallback { width: 48px; height: 36px; flex: none; margin-top: 1px; }
+  .school-logo { object-fit: contain; }
+  .logo-mono { filter: var(--logo-mono-filter); }
+  .logo-fallback { width: 36px; margin-inline: 6px;
+    display: inline-flex; align-items: center; justify-content: center; border-radius: 6px;
+    background: var(--side-bg); color: #fff; font: 700 0.72rem/1 "Montserrat", Arial, sans-serif;
+  }
+  @media print { .school-logo { width: 36px; height: 26px; } .logo-fallback { width: 26px; height: 26px; } }
+
+  /* ---------- Sections ---------- */
+  main { display: flex; flex-direction: column; }
+  section { padding-top: 26px; scroll-margin-top: 12px; }
+  section h2 {
+    font-size: 0.95rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; margin: 0 0 12px;
+    padding-bottom: 5px; border-bottom: 1px solid var(--rule);
+  }
+  h3 { font-size: 1rem; margin: 18px 0 8px; font-style: italic; font-weight: 400; color: var(--muted); }
+
+  .entry { display: grid; grid-template-columns: 1fr auto; column-gap: 16px; margin-bottom: 14px; }
+  .entry .what { font-weight: 600; }
+  .entry .where { font-style: italic; }
+  .title-line .what { font-weight: 600; }
+  .title-line .status { font-weight: 400; }
+  .sub { color: var(--muted); }
+  .sub .where { font-style: normal; }
+  .entry .when { color: var(--muted); white-space: nowrap; text-align: right; }
+  .entry ul { grid-column: 1 / -1; margin: 4px 0 0; padding-left: 20px; }
+  .entry li { margin: 2px 0; }
+  .entry .note { grid-column: 1 / -1; color: var(--muted); font-size: 0.95rem; }
+
+  ol.pubs { padding-left: 0; list-style: none; counter-reset: pub; margin: 0; }
+  ol.pubs li { counter-increment: pub; position: relative; padding-left: 2.4em; margin-bottom: 10px; }
+  ol.pubs li::before { content: "[" counter(pub) "]"; position: absolute; left: 0; color: var(--muted); }
+  ol.pubs li[hidden] { display: none; }
+  .me { font-weight: 700; }
+  .stu { text-decoration: underline; }
+  .award { color: #b8860b; }
+  .links a { font-size: 0.9rem; margin-right: 8px; }
+  .legend { font-size: 0.9rem; color: var(--muted); margin: 0 0 10px; }
+
+  .chips { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 14px; }
+  .chips button { background: var(--chip-bg); }
+  .chips button[aria-pressed="true"] { background: var(--chip-on); color: var(--chip-on-text); }
+
+  table { border-collapse: collapse; width: 100%; font-size: 0.95rem; margin: 6px 0 12px; }
+  th, td { text-align: left; padding: 6px 8px; border-bottom: 1px solid var(--rule); vertical-align: top; }
+  th { font-weight: 600; }
+  td.num, th.num { text-align: right; }
+  .table-scroll { overflow-x: auto; }
+
+  dl.skills { display: grid; grid-template-columns: max-content 1fr; gap: 6px 18px; margin: 0; }
+  dl.skills dt { font-weight: 600; }
+  dl.skills dd { margin: 0; }
+
+  details summary { cursor: pointer; color: var(--link); margin: 4px 0 8px; }
+  footer { margin-top: 48px; color: var(--muted); font-size: 0.85rem; }
+
+  [data-only][hidden] { display: none !important; }
+
+  @media (max-width: 600px) {
+    body { font-size: 16px; }
+    .wrap { padding-top: 28px; }
+    header h1 { font-size: 1.8rem; }
+    .entry { grid-template-columns: 1fr; }
+    .entry .when { text-align: left; }
+    dl.skills { grid-template-columns: 1fr; }
+    dl.skills dd { margin-bottom: 8px; }
+  }
+
+  @media print {
+    :root { --text:#000; --muted:#444; --bg:#fff; --rule:#bbb; --link:#000; }
+    body { font-size: 11pt; }
+    .wrap { padding: 0; max-width: none; }
+    .toolbar, aside.sidebar, .chips, footer, details summary { display: none !important; }
+    body { padding-left: 0 !important; }
+    details > * { display: block !important; }
+    section { break-inside: auto; padding-top: 14px; }
+    .entry { break-inside: avoid; }
+    a[href^="http"]::after { content: ""; }
+  }
+</style>
+</head>
+<body>
+<aside class="sidebar"><a class="home-link" href="../">&larr; Home</a><nav class="jump" aria-label="Sections"></nav></aside>
+<div class="wrap">
+
+<!-- =====================================================================
+  HOW TO EDIT
+  • Each <section> has data-academic="N" and data-industry="N":
+    N = its position in that view (1 = first). Use "-" to hide it in that view.
+  • Anything with data-only="academic" or data-only="industry" shows in one view only.
+  • Publications / presentations: each <li> has data-topic="..." (space-separated,
+    hyphens for multi-word topics). Filter buttons are generated automatically.
+  • Link a specific view: yoursite/?view=industry  or  ?view=academic
+====================================================================== -->
+
+<header>
+  <h1>Berk Durutürk</h1>
+  <p class="tagline">
+    <span data-only="academic">Ph.D. Candidate &amp; SEAS Fellow · School for Environment and Sustainability, University of Michigan</span>
+    <span data-only="industry">Geological Engineer · Aquatic Biogeochemistry · Ann Arbor, MI</span>
+  </p>
+  <p class="contact">
+    <a href="mailto:berkduruturk@gmail.com">berkduruturk@gmail.com</a>
+    <a href="https://www.linkedin.com/in/berkduruturk/">LinkedIn</a>
+    <a href="https://scholar.google.com/citations?user=x6St0ykAAAAJ&amp;hl=en">Google Scholar</a>
+    <a href="https://www.researchgate.net/profile/Berk-Duruturk">ResearchGate</a>
+    <span>Samuel T. Dana Building, 440 Church St, Ann Arbor, MI 48109</span>
+  </p>
+
+  <div class="toolbar">
+    <div class="toggle" role="group" aria-label="CV view">
+      <button type="button" data-view="academic" aria-pressed="true">Academic CV</button>
+      <button type="button" data-view="industry" aria-pressed="false">Résumé</button>
+    </div>
+    <button type="button" class="print-btn" onclick="window.print()">Download PDF</button>
+  </div>
+
+</header>
+
+<main>
+
+  <!-- ============ SUMMARY (industry) ============ -->
+  <section id="summary" data-title="Summary" data-academic="-" data-industry="1">
+    <h2>Summary</h2>
+    <p>Berk Durutürk is a geological engineer and a Ph.D. candidate at Aquatic Biogeochemistry Lab of Dr. Silvia Newell at the University of Michigan - Ann Arbor. His research mainly focuses on nitrogen transformations, harmful algal blooms (HABs), and hypoxic events in Lakes Erie and Superior.</p>
+    <p>His research interests also include paleolimnological reconstruction and paleoclimate proxies. Before joining the Newell Lab, he studied Late Pleistocene and Holocene paleoclimate records in lake sediments of the Eastern European Plain at St. Petersburg State University. Earlier, during his B.Sc. and M.Sc. in Türkiye, he worked on active faults, landslides and coastal carbonate deposits in Central Anatolia and along the Aegean and Mediterranean coasts.</p>
+  </section>
+
+  <!-- ============ RESEARCH INTERESTS (academic) ============ -->
+  <section id="interests" data-title="Research Interests" data-academic="1" data-industry="-">
+    <h2>Research Interests</h2>
+    <ul>
+      <li>Stable Isotopic Biogeochemical Techniques in Paleolimnology</li>
+      <li>Sediment Nitrogen Transformations and Biomarkers</li>
+      <li>Nutrient Dynamics at the Sediment-water Interfaces</li>
+      <li>Sediment Redox Ladder Sequence</li>
+      <li>Aquatic Biogeochemistry of the Great Lakes</li>
+    </ul>
+  </section>
+
+  <!-- ============ EDUCATION ============ -->
+  <section id="education" data-title="Education" data-academic="2" data-industry="6">
+    <h2>Education</h2>
+    <div class="entry">
+      <div class="with-logo"><img class="school-logo" src="../logos/umich.png" alt="University of Michigan logo" data-initials="UM" width="32" height="32"><div><div class="title-line"><span class="what">Ph.D., Environment &amp; Sustainability</span></div><div class="sub"><span class="where">University of Michigan</span>, Ann Arbor, MI</div></div></div>
+      <div class="when">2023 – Present</div>
+    </div>
+    <div class="entry">
+      <div class="with-logo"><img class="school-logo" src="../logos/wright-state.png" alt="Wright State University logo" data-initials="WSU" width="32" height="32"><div><div class="title-line"><span class="what">Ph.D., Environmental Sciences</span> <span class="status">[transferred]</span></div><div class="sub"><span class="where">Wright State University</span>, Dayton, OH</div></div></div>
+      <div class="when">2022 – 2023</div>
+    </div>
+    <div class="entry">
+      <div class="with-logo"><img class="school-logo logo-mono" src="../logos/spbu.png" alt="Saint Petersburg State University logo" data-initials="SPbU" width="32" height="32"><div><div class="title-line"><span class="what">Ph.D., Geology</span> <span class="status">[withdrew]</span></div><div class="sub"><span class="where">Saint Petersburg State University</span>, Russia</div></div></div>
+      <div class="when">2019 – 2021</div>
+    </div>
+    <div class="entry">
+      <div class="with-logo"><img class="school-logo" src="../logos/hacettepe.png" alt="Hacettepe University logo" data-initials="HÜ" width="32" height="32"><div><div class="title-line"><span class="what">M.Sc., Geological Engineering</span></div><div class="sub"><span class="where">Hacettepe University</span>, Ankara, Türkiye</div></div></div>
+      <div class="when">2015 – 2018</div>
+    </div>
+    <div class="entry">
+      <div class="with-logo"><img class="school-logo" src="../logos/hacettepe.png" alt="Hacettepe University logo" data-initials="HÜ" width="32" height="32"><div><div class="title-line"><span class="what">B.Sc., Geological Engineering</span></div><div class="sub"><span class="where">Hacettepe University</span>, Ankara, Türkiye</div></div></div>
+      <div class="when">2009 – 2015</div>
+    </div>
+  </section>
+
+  <!-- ============ EXPERIENCE ============ -->
+  <section id="experience" data-title="Experience" data-academic="3" data-industry="2">
+    <h2>Experience</h2>
+    <div class="entry">
+      <div><div class="title-line"><span class="what">SEAS Fellow</span></div><div class="sub"><span class="where">School for Environment and Sustainability, University of Michigan</span>, Ann Arbor, MI</div></div>
+      <div class="when">2024 – Present</div>
+    </div>
+    <div class="entry">
+      <div><div class="title-line"><span class="what">Graduate Student Instructor</span></div><div class="sub"><span class="where">School for Environment and Sustainability, University of Michigan</span>, Ann Arbor, MI</div></div>
+      <div class="when">Fall 2025</div>
+    </div>
+    <div class="entry">
+      <div><div class="title-line"><span class="what">Graduate Student Research Assistant</span> (NSF-funded)</div><div class="sub"><span class="where">School for Environment and Sustainability, University of Michigan</span>, Ann Arbor, MI</div></div>
+      <div class="when">2023 – 2024</div>
+    </div>
+    <div class="entry">
+      <div><div class="title-line"><span class="what">Graduate Research Assistant</span></div><div class="sub"><span class="where">Dept. of Earth and Environmental Sciences, Wright State University</span>, Dayton, OH</div></div>
+      <div class="when">2022 – 2023</div>
+    </div>
+    <div class="entry">
+      <div><div class="title-line"><span class="what">Visiting Researcher</span></div><div class="sub"><span class="where">Shirshov Institute of Oceanography</span>, Moscow, Russia</div></div>
+      <div class="when">2021</div>
+    </div>
+    <div class="entry">
+      <div><div class="title-line"><span class="what">Ph.D. Candidate</span></div><div class="sub"><span class="where">Dept. of Geomorphology, Saint Petersburg State University</span>, Russia</div></div>
+      <div class="when">2019 – 2021</div>
+    </div>
+    <div class="entry">
+      <div><div class="title-line"><span class="what">Graduate Fellow and Scholar</span></div><div class="sub"><span class="where">Ministry of Science and Higher Education of the Russian Federation</span></div></div>
+      <div class="when">2018 – 2021</div>
+    </div>
+    <div class="entry">
+      <div><div class="title-line"><span class="what">Graduate Research Fellow</span></div><div class="sub"><span class="where">Hacettepe University &amp; Scientific and Technological Research Council of Türkiye (TÜBİTAK)</span></div></div>
+      <div class="when">2016 – 2017</div>
+    </div>
+    <div class="entry">
+      <div><div class="title-line"><span class="what">Geological Engineer Intern</span></div><div class="sub"><span class="where">General Directorate of Mineral Research and Exploration (MTA)</span>, Ankara, Türkiye</div></div>
+      <div class="when">Aug – Sep 2013</div>
+      <ul>
+        <li>Department of Mineralogy and Petrology: mineral identification and description, and documenting samples in the directorate’s report format.</li>
+        <li>Trained in sample preparation, XRD and advanced microscopy, including coal microscopy.</li>
+      </ul>
+    </div>
+
+    <h3>Other Professional Experience</h3>
+    <div class="entry">
+      <div><div class="title-line"><span class="what">Exchange Programs Coordinator</span></div><div class="sub"><span class="where">Ozman International Education &amp; Career Consulting</span>, Ankara, Türkiye</div></div>
+      <div class="when">2016 – 2018</div>
+      <ul>
+        <li>Head Coordinator for InterExchange; co-coordinated internship and traineeship programs for Alliance Abroad Group.</li>
+        <li>Marketed the U.S. Department of State–supported Summer Work and Travel program and created marketing materials.</li>
+        <li>Developed new job and housing placements for Turkish J-1 students and managed communication between U.S. sponsors, employers and students.</li>
+        <li>Coordinated with universities, colleges and high schools in the U.S. and Canada, and with language schools worldwide.</li>
+      </ul>
+    </div>
+    <div class="entry">
+      <div><div class="title-line"><span class="what">Education Consultant</span></div><div class="sub"><span class="where">Ozman International Education &amp; Career Consulting</span>, Ankara, Türkiye</div></div>
+      <div class="when">2011 – 2012</div>
+      <ul>
+        <li>Advised Summer Work and Travel applicants on the program, workplaces, life in the U.S. and J-1 visa rights.</li>
+        <li>Guided visa applicants for the U.S., Canada, U.K., Ukraine and Russia on requirements and regulations.</li>
+      </ul>
+    </div>
+    <div class="entry" data-only="industry">
+      <div><div class="title-line"><span class="what">Food and Beverage Attendant</span></div><div class="sub"><span class="where">Pacific Park on the Santa Monica Pier</span>, Los Angeles, CA</div></div>
+      <div class="when">Summer 2009</div>
+      <ul><li>Customer service role through the Summer Work and Travel program.</li></ul>
+    </div>
+  </section>
+
+  <!-- ============ FIELDWORK ============ -->
+  <section id="fieldwork" data-title="Fieldwork" data-academic="7" data-industry="3">
+    <h2>Fieldwork</h2>
+    <div class="entry">
+      <div><div class="title-line"><span class="what">Scientist</span></div><div class="sub">Lakes Erie and Superior, USA</div></div>
+      <div class="when">2022 – 2024</div>
+      <ul>
+        <li>18 research trips (May, July, August, October) aboard R/V <i>Blue Heron</i> (University of Minnesota Duluth) and R/V <i>Gibraltar III</i> (The Ohio State University).</li>
+        <li>Lake-bottom sediment coring and water-column sampling.</li>
+      </ul>
+    </div>
+    <div class="entry">
+      <div><div class="title-line"><span class="what">Field Researcher</span></div><div class="sub">Lake Krasnaya, NW of Saint Petersburg, Russia</div></div>
+      <div class="when">Fall 2020</div>
+      <ul>
+        <li>Sediment sampling and coring at 24 m water depth; prepared and maintained field equipment; packed and transported cores for cold storage.</li>
+      </ul>
+    </div>
+    <div class="entry">
+      <div><div class="title-line"><span class="what">Field Researcher</span></div><div class="sub">Kaş–Kalkan Region, SW Anatolia, Türkiye</div></div>
+      <div class="when">Spring 2018</div>
+      <ul>
+        <li>Investigated fault systems, secondary joint development and fault–fluid interactions; sampled coastal carbonate veins for U-Th dating and stable isotopes.</li>
+        <li>Project: “Investigation of late Quaternary paleo-seismicity of the major active fault systems in Turkey with radiometric dating and isotope studies” (TÜBİTAK No. 114Y544).</li>
+      </ul>
+    </div>
+    <div class="entry">
+      <div><div class="title-line"><span class="what">Geological Mapping Summer Training</span></div><div class="sub">Kazan Depression, NW of Ankara, Türkiye</div></div>
+      <div class="when">Summer 2012</div>
+      <ul><li>Field mapping in a team of 10; wrote a detailed field report and presented it to a jury.</li></ul>
+    </div>
+    <div class="entry">
+      <div><div class="title-line"><span class="what">Field Geology Course</span></div><div class="sub">Ankara, Central Anatolia, Türkiye</div></div>
+      <div class="when">Fall 2012</div>
+      <ul><li>A semester of weekly field trips mapping 12 geologically significant sites.</li></ul>
+    </div>
+  </section>
+
+  <!-- ============ SKILLS (industry) ============ -->
+  <section id="skills" data-title="Skills" data-academic="8" data-industry="4">
+    <h2>Skills</h2>
+    <dl class="skills">
+      <dt>Computer</dt><dd>CorelDraw, QGIS, R, IDRISI Selva, SketchUp, Adobe Photoshop, Geosetter, Stereonet, Win Tensor, HYDRUS, Modview, Phreeqci, Modflow, OxCal</dd>
+      <dt>Laboratory</dt><dd>MIMS (membrane inlet mass spectrometer), SEAL nutrient analyzer, sedimentary sample preparation (especially microtectonic features such as carbonated rocks and calcite veins), sample preparation for radiocarbon and U-Th dating, scanning electron microscopy, lake bottom core preparation, splitting and scanning, multi-sensor core logger (MSCL-S, GEOTEK), fossil picking for radiocarbon analysis, rock and sediment sample repository organization, Bayesian analysis for radiocarbon dates, Bacon age-depth modeling</dd>
+      <dt>Field</dt><dd>Soil pit excavation and sedimentological description, sampling fossil organic matter for radiocarbon dating, Russian peat corer, gravity corer, multi-corer, pole corer, piston corer (UWITEC), and assembling the floating platform, lake sediment core collection and sub-sampling (gravity cores, multi-cores, and piston cores), lake bottom GPR surveys for geophysical analysis and bathymetrical investigation, Secchi disc, surface water sampling, auger drill logging, and sediment sampling, monitoring well and piezometer completion, groundwater level measurement, camp management, field logistics &amp; operations, sample management, domestic and international shipping</dd>
+      <dt>Communication</dt><dd>Graduate-level teaching, conference posters and talks, ESL instruction and course design</dd>
+      <dt>Program coordination</dt><dd>International exchange programs, stakeholder communication, marketing materials</dd>
+      <dt>Safety</dt><dd>Adult First Aid, CPR, AED</dd>
+      <dt>Leadership</dt><dd>Founder &amp; President of the Hacettepe Model UN Society; led international volunteer camps</dd>
+    </dl>
+  </section>
+
+  <!-- ============ PUBLICATIONS ============ -->
+  <section id="publications" data-title="Publications" data-academic="4" data-industry="7">
+    <h2>Publications</h2>
+    <div class="chips" role="group" aria-label="Filter publications by topic"></div>
+
+    <h3>Submitted</h3>
+    <ol class="pubs">
+      <li data-topic="great-lakes">
+        Benedict, A., Sowa, O., Sandrock, P., Hudson, N., Collis, L., O’Loughlin, C., Pu, G., Critchfield, J., Whitfield, N., Klip, H., <span class="me">Durutürk, B.</span>, &amp; Sharma, S. “Spatial heterogeneity in winter conditions and under-ice dynamics across the Laurentian Great Lakes.” Submitted to <i>Journal of Great Lakes Research</i>.
+      </li>
+    </ol>
+
+    <h3>Published</h3>
+    <ol class="pubs">
+      <li data-topic="great-lakes data-sets">
+        Werne, J. P., Newell, S., Suder, T., <span class="me">Duruturk, B.</span>, Hamilton, T., Elliott, E., Ricketts, R. D., &amp; O’Beirne, M. (2025). “CTD and in situ Sonde field data collected on Lake Superior and Lake Erie aboard the R/V Blue Heron and R/V Gibraltar III from May 2021 to May 2024.” <i>Biological and Chemical Oceanography Data Management Office (BCO-DMO)</i>.
+        <span class="links"><a href="https://doi.org/10.26008/1912/bco-dmo.967649.1">DOI</a></span>
+      </li>
+      <li data-topic="gis geohazards">
+        <span class="me">Duruturk, B.</span>, Demir, N., Koseoglu, I., Onal, U. B., &amp; Ercanoglu, M. (2017). “GIS-Based Determination of Landslide Properties in Regional Scale: Karabük Province (NW Turkey).” <i>Annals of Valahia University of Târgoviște, Geographical Series</i>, 17(1), 37.
+        <span class="links"><a href="https://doi.org/10.1515/avutgs-2017-0004">DOI</a></span>
+      </li>
+    </ol>
+  </section>
+
+  <!-- ============ PRESENTATIONS ============ -->
+  <section id="presentations" data-title="Presentations" data-academic="5" data-industry="8">
+    <h2>Conference Abstracts, Posters &amp; Presentations</h2>
+    <div class="chips" role="group" aria-label="Filter presentations by topic"></div>
+    <ol class="pubs">
+      <li data-topic="nitrogen-cycling great-lakes">
+        <span class="me">Duruturk, B.</span>, Suder, T. W., Werne, J. P., &amp; Newell, S. E. “Sink and Source: Sediment Nitrogen Dynamics in Lake Erie’s Western and Central Basins” (Poster). <i>ASLO Aquatic Sciences Meeting 2027</i>, San Juan, Puerto Rico, Feb 28 – Mar 5, 2027.
+      </li>
+      <li data-topic="nitrogen-cycling great-lakes">
+        <span class="me">Duruturk, B.</span>, Suder, T. W., Werne, J. P., &amp; Newell, S. E. “Comparing Sediment Nitrogen Cycling Across a Trophic Gradient: Lake Superior and Lake Erie” (Poster). <i>Midwest Geobiology Symposium 2026</i>, University of Chicago, Chicago, IL, Oct 24, 2026.
+      </li>
+      <li data-topic="nitrogen-cycling great-lakes algal-blooms">
+        <span class="me">Duruturk, B.</span>, Suder, T. W., Werne, J. P., &amp; Newell, S. E. “Sediment Nitrogen Cycling in Lake Erie: Basin-Specific Responses to Warming, Nutrient Loading, and Harmful Algal Blooms (2021–2023)” (Oral). <i>Sixth Annual Harmful Algal Bloom Virtual Symposium</i>, Algal Bloom Action Team, Jan 8–9, 2026.
+      </li>
+      <li data-topic="nitrogen-cycling great-lakes">
+        <span class="me">Duruturk, B.</span>, Suder, T., Werne, J., &amp; Newell, S. E. “Nitrogen and Phosphorus Dynamics at the Sediment-Water Interface in Lakes Erie and Superior” (Poster). <i>68th IAGLR Annual Conference on Great Lakes Research</i>, Milwaukee, WI, June 2–6, 2025.
+      </li>
+      <li data-topic="great-lakes">
+        Suder, T., <span class="me">Duruturk, B.</span>, Sauer, H., O’Beirne, M., Hamilton, T., Newell, S. E., &amp; Werne, J. “The εpor proxy in modern large lake systems representing trophic extremes” (Poster). <i>GSA Connects 2023</i>, Pittsburgh, PA, Oct 15–18, 2023.
+      </li>
+      <li data-topic="nitrogen-cycling great-lakes">
+        <span class="me">Duruturk, B.</span>, Werne, J., Suder, T., Gonzalez-Boy, K., &amp; Newell, S. E. “Nitrogen loss and recycling in the western and seasonally hypoxic central basins of Lake Erie” (Poster). <i>ASLO Meeting 2023</i>, Palma de Mallorca, Spain, June 4–9, 2023.
+      </li>
+      <li data-topic="geochemistry-tectonics">
+        <span class="me">Duruturk, B.</span>, Dirik, R. K., Unal-Imer, E., Uysal, İ. T., Mutlu, H., Yuce, G., &amp; Temel, A. “New Evidence about Carbonate Veins and Calcite Fiber outcrops between Kaş-Kalkan (Antalya, Turkey)” (Poster). <i>8th TURQUA Quaternary Symposium of Turkey</i>, Istanbul Technical University, May 2–5, 2018.
+      </li>
+      <li data-topic="geochemistry-tectonics">
+        Mutlu, H., Dirik, R. K., Uysal, T., Yuce, G., Bayari, S., Ozyurt, N. N., Temel, A., Seyitoglu, G., Unal-Imer, E., Aydogdu, I., Yildirim, G., &amp; <span class="me">Duruturk, B.</span> “Radiometric, stable isotopic, geochemical and noble gas signals from the active fault zones in Anatolia” (Oral). <i>70th Geological Congress of Turkey</i>, Ankara, April 10–14, 2017.
+      </li>
+      <li data-topic="gis geohazards">
+        <span class="me">Duruturk, B.</span>, Demir, N., Koseoglu, I., Onal, U. B., &amp; Ercanoglu, M. “GIS-Based Determination of Landslide Properties in Regional Scale: Karabük Province (NW Turkey)” (Poster). <i>3rd International Conference Geography, Environment and GIS</i>, Târgoviște, Romania, May 19–21, 2016.
+      </li>
+    </ol>
+  </section>
+
+  <!-- ============ TEACHING ============ -->
+  <section id="teaching" data-title="Teaching" data-academic="6" data-industry="9">
+    <h2>Teaching</h2>
+    <div class="entry">
+      <div><div class="title-line"><span class="what">EAS 507: Interpreting Research in Ecosystem Science and Management</span></div><div class="sub">Graduate Student Instructor, University of Michigan SEAS (Instructor: Dr. Brian Weeks)</div></div>
+      <div class="when">Winter 2027</div>
+    </div>
+    <div class="entry">
+      <div><div class="title-line"><span class="what">EAS 520: Fluvial Ecosystems and Their Management</span></div><div class="sub">Graduate Student Instructor, University of Michigan SEAS (Instructor: Dr. G. Allen Burton Jr.)</div></div>
+      <div class="when">Fall 2025</div>
+    </div>
+    <div class="entry">
+      <div><div class="title-line"><span class="what">English as a Second Language (ESL) Teacher</span></div><div class="sub">Infinitive Language Schools, Saint Petersburg, Russia</div></div>
+      <div class="when">2020 – 2021</div>
+      <ul>
+        <li>Taught intermediate and upper-intermediate learners; designed course materials and selected textbooks and supplements.</li>
+        <li>Ran speaking clubs and taught writing for everyday and academic use.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ GRANTS & AWARDS ============ -->
+  <section id="awards" data-title="Honors &amp; Awards" data-academic="9" data-industry="10">
+    <h2>Honors, Grants &amp; Awards</h2>
+    <div class="entry"><div><div class="title-line"><span class="what">SEAS Research Support Gift Fund</span></div><div class="sub">School for Environment and Sustainability, University of Michigan — $5,800</div></div><div class="when">2025</div></div>
+    <div class="entry"><div><div class="title-line"><span class="what">Rackham Conference Travel Grant</span></div><div class="sub">Rackham Graduate School, University of Michigan — $900</div></div><div class="when">2025</div></div>
+    <div class="entry"><div><div class="title-line"><span class="what">Student Travel Award</span></div><div class="sub">International Association for Great Lakes Research (IAGLR) — $170</div></div><div class="when">2025</div></div>
+    <div class="entry"><div><div class="title-line"><span class="what">Full Doctoral Funding and Fellowship</span></div><div class="sub">SEAS, University of Michigan</div></div><div class="when">2023 – 2028</div></div>
+    <div class="entry"><div><div class="title-line"><span class="what">WestRock Scholar Program</span></div><div class="sub">College of Science and Mathematics, Wright State University — $5,537</div></div><div class="when">2023</div></div>
+    <div class="entry"><div><div class="title-line"><span class="what">NSF Graduate Student Funding and Scholarship</span></div><div class="sub">Dr. Silvia Newell’s NSF “Cyanos” project, Wright State University</div></div><div class="when">2022 – 2023</div></div>
+    <div class="entry"><div><div class="title-line"><span class="what">CoSM Fund</span></div><div class="sub">College of Science and Mathematics, Wright State University — $500</div></div><div class="when">2022</div></div>
+    <div class="entry"><div><div class="title-line"><span class="what">Benjamin Richard Memorial Field Experience Fund</span></div><div class="sub">Dept. of Earth and Environmental Sciences, Wright State University — $105</div></div><div class="when">2022</div></div>
+    <details data-only="academic">
+      <summary>Earlier honors</summary>
+      <div class="entry"><div><div class="title-line"><span class="what">Graduate Research Fellowship and Scholarship</span></div><div class="sub">Saint Petersburg State University via the Ministry of Science and Higher Education of the Russian Federation</div></div><div class="when">2018 – 2021</div></div>
+      <div class="entry"><div><div class="title-line"><span class="what">Rossotrudnichestvo Fellowship</span></div><div class="sub">Study in Russia Competition</div></div><div class="when">2018</div></div>
+      <div class="entry"><div><div class="title-line"><span class="what">Graduate Student Scholar</span></div><div class="sub">TÜBİTAK – Hacettepe University</div></div><div class="when">2016 – 2017</div></div>
+      <div class="entry"><div><div class="title-line"><span class="what">Department Honors</span></div><div class="sub">Geological Engineering, Hacettepe University</div></div><div class="when">2013 – 2014</div></div>
+      <div class="entry"><div><div class="title-line"><span class="what">High School Scholarship</span> (4 years)</div><div class="sub">Yildirim Beyazit High School Alumni Association</div></div><div class="when">2004 – 2008</div></div>
+    </details>
+  </section>
+
+  <!-- ============ SYMPOSIUMS & SEMINARS (academic) ============ -->
+  <section id="symposiums" data-title="Symposiums" data-academic="10" data-industry="-">
+    <h2>Symposiums &amp; Seminars Attended</h2>
+    <ul>
+      <li>Midwest Geobiology Symposium 2026, University of Chicago, Chicago, IL — Oct 24, 2026 (in person)</li>
+      <li>Understanding Algal Blooms: State of the Science Conference, Toledo, OH — Sept 2, 2026 (virtual)</li>
+      <li>Sixth Annual Harmful Algal Bloom Virtual Symposium, Algal Bloom Action Team (ABAT) — Jan 8–9, 2026 (virtual)</li>
+      <li>Black Sea – Mediterranean Science Connections International Symposium, Celebrating 50 Years of METU-IMS Research — Oct 3, 2025 (virtual)</li>
+      <li>Michigan’s 2025 State of the Western Lake Erie Basin Conference, Adrian College, Adrian, MI — June 26, 2025 (in person)</li>
+      <li>Grantsmanship Workshop (Dr. Bill Currie), School for Environment and Sustainability, University of Michigan — Feb 2, 2025 (in person)</li>
+    </ul>
+  </section>
+
+  <!-- ============ SOCIETIES ============ -->
+  <section id="societies" data-title="Societies" data-academic="11" data-industry="11">
+    <h2>Professional Societies</h2>
+    <ul>
+      <li>Turkish Chamber of Geological Engineers</li>
+      <li>Association for the Sciences of Limnology and Oceanography (ASLO)</li>
+      <li>Cooperative Institute for Great Lakes Research (CIGLR)</li>
+      <li>International Association for Great Lakes Research (IAGLR)</li>
+      <li>The Lake Erie and Aquatic Research Network (LEARN)</li>
+    </ul>
+  </section>
+
+  <!-- ============ CERTIFICATIONS ============ -->
+  <section id="certifications" data-title="Certifications" data-academic="12" data-industry="5">
+    <h2>Certifications &amp; Training</h2>
+    <ul>
+      <li>Adult First Aid, CPR and AED</li>
+      <li>TS-EN ISO 9001:2015 Quality Management Systems</li>
+      <li>Project Management</li>
+      <li>Training of Trainers Program (Eğiticilerin Eğitimi Programı)</li>
+      <li>Introduction to Lakes (online course)</li>
+      <li>UNI 101: Introduction to University Life (Üniversite Yaşamına Giriş), certificate of appreciation</li>
+    </ul>
+  </section>
+
+  <!-- ============ LANGUAGES ============ -->
+  <section id="languages" data-title="Languages" data-academic="13" data-industry="12">
+    <h2>Languages</h2>
+    <p>Turkish (Native) · English (Fluent) · Russian (B2)</p>
+  </section>
+
+  <!-- ============ VOLUNTEER ============ -->
+  <section id="volunteer" data-title="Leadership &amp; Volunteering" data-academic="14" data-industry="13">
+    <h2>Leadership &amp; Volunteer Work</h2>
+    <div class="entry"><div><div class="title-line"><span class="what">Founder &amp; President</span></div><div class="sub">Model UN Society of Hacettepe University</div></div><div class="when">2009 – 2012</div></div>
+    <div class="entry"><div><div class="title-line"><span class="what">Participant</span></div><div class="sub">European Union Project “All Equal,” Košice, Slovakia</div></div><div class="when">2013</div></div>
+    <div class="entry"><div><div class="title-line"><span class="what">Camp Leader</span></div><div class="sub">GSM International Volunteer Workcamp, Kastamonu, Türkiye</div></div><div class="when">2012</div></div>
+    <div class="entry"><div><div class="title-line"><span class="what">Camp Leader</span></div><div class="sub">GSM International Volunteer Workcamp, Didim, Muğla, Türkiye</div></div><div class="when">2011</div></div>
+    <div class="entry"><div><div class="title-line"><span class="what">Volunteer</span></div><div class="sub">IJGD International Volunteer Workcamp, Gerolstein, Germany</div></div><div class="when">2007</div></div>
+  </section>
+
+  <!-- ============ REFERENCES ============ -->
+  <section id="references" data-title="References" data-academic="15" data-industry="14">
+    <h2>References</h2>
+    <p>Available upon request.</p>
+  </section>
+
+</main>
+
+<footer>Last updated: September 2026</footer>
+</div>
+
+<script>
+(function () {
+  const main = document.querySelector('main');
+  const sections = [...main.querySelectorAll('section')];
+  const nav = document.querySelector('nav.jump');
+  const buttons = document.querySelectorAll('.toggle button');
+
+  function setView(view) {
+    sections.forEach(s => {
+      const v = s.dataset[view];
+      const hide = !v || v === '-';
+      s.hidden = hide;
+      s.style.order = hide ? 999 : v;
+    });
+    document.querySelectorAll('[data-only]').forEach(el => {
+      el.hidden = el.dataset.only !== view;
+    });
+    const visible = sections.filter(s => !s.hidden)
+      .sort((a, b) => a.style.order - b.style.order);
+    nav.innerHTML = visible.map(s => `<a href="#${s.id}">${s.dataset.title}</a>`).join('');
+    updateActive();
+    buttons.forEach(b => b.setAttribute('aria-pressed', b.dataset.view === view));
+    // Keep ?view= in the address bar (skipped where the browser doesn't allow it, e.g. previews)
+    try {
+      const url = new URL(location);
+      url.searchParams.set('view', view);
+      history.replaceState(null, '', url);
+    } catch (e) {}
+  }
+
+
+  // Highlight the section currently in view
+  function updateActive() {
+    const links = [...nav.querySelectorAll('a')];
+    if (!links.length) return;
+    let current = links[0];
+    const atBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4;
+    for (const a of links) {
+      const sec = document.querySelector(a.getAttribute('href'));
+      if (sec && sec.getBoundingClientRect().top <= 120) current = a;
+    }
+    if (atBottom) current = links[links.length - 1];
+    links.forEach(a => a.classList.toggle('active', a === current));
+  }
+  window.addEventListener('scroll', updateActive, { passive: true });
+  window.addEventListener('resize', updateActive);
+
+  buttons.forEach(b => b.addEventListener('click', () => setView(b.dataset.view)));
+  const initial = new URLSearchParams(location.search).get('view');
+  setView(initial === 'industry' ? 'industry' : 'academic');
+
+  // School logos: if an image file is missing, show a small initials badge instead
+  document.querySelectorAll('img.school-logo').forEach(img => {
+    const fallback = () => {
+      const b = document.createElement('span');
+      b.className = 'logo-fallback'; b.textContent = img.dataset.initials || '';
+      b.setAttribute('aria-hidden', 'true'); img.replaceWith(b);
+    };
+    if (img.complete && img.naturalWidth === 0) fallback(); else img.addEventListener('error', fallback);
+  });
+
+  // Topic filters: each .chips filters the list items inside its own section
+  const label = t => t.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase())
+                      .replace(/\bGis\b/, 'GIS').replace(/\bSets\b/, 'Sets');
+  document.querySelectorAll('.chips').forEach(chips => {
+    const items = [...chips.closest('section').querySelectorAll('ol.pubs li')];
+    const topics = [...new Set(items.flatMap(li => (li.dataset.topic || '').split(/\s+/).filter(Boolean)))];
+    if (topics.length < 2) { chips.remove(); return; }
+    chips.innerHTML = ['all', ...topics].map(t =>
+      `<button type="button" data-t="${t}" aria-pressed="${t === 'all'}">${t === 'all' ? 'All' : label(t)}</button>`
+    ).join('');
+    chips.addEventListener('click', e => {
+      const btn = e.target.closest('button'); if (!btn) return;
+      const t = btn.dataset.t;
+      chips.querySelectorAll('button').forEach(b => b.setAttribute('aria-pressed', b === btn));
+      items.forEach(li => {
+        li.hidden = t !== 'all' && !(li.dataset.topic || '').split(/\s+/).includes(t);
+      });
+    });
+  });
+})();
+</script>
+</body>
+
+</html>
